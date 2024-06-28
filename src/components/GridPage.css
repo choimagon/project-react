@@ -1,0 +1,109 @@
+.grid-page {
+    position: relative;
+    width: calc(100% - 20%); /* 사이드바의 너비를 제외한 부분을 그리드 페이지로 설정 */
+    height: 100vh;
+    border: 1px solid #ccc;
+    overflow: hidden; /* 도형이 그리드 페이지를 벗어나지 않도록 */
+    text-align: center;
+  }
+  
+  .shape {
+    position: absolute;
+    width: 100px;
+    height: 70px;
+    user-select: none; 
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  .modal{
+    user-select: none; 
+    background-color: whitesmoke;
+    border-radius: 10px;
+  }
+  .modal p{
+    padding: 5px;
+    border-style: dashed solid;
+    border-radius: 10px;
+  }
+  .modal .exit{
+    border: 0;
+    background-color: lightcoral;
+    color: white;
+    border-radius: 30%;
+    margin-left: 65%;
+  }
+  .modal-content{
+    padding: 6px 6px;
+    text-align: center;
+    font-size: small;
+  }
+  .modal-content{
+    font-size: small;
+    font-weight: bold;
+  }
+  .modal-content .btn{
+    border: 0;
+    width: 95%;
+    padding: 5px 5px;
+    margin: 2px 1px;
+    background-color: lightgray;
+    border-radius: 15px;
+  }
+  .d{
+    background-color: lightgoldenrodyellow; 
+  }
+  .r{
+    background-color: limegreen;
+  }
+  .m0 {
+    background-color: #28a745; /* Green */
+  }
+  
+  .m1 {
+    background-color: #007bff; /* Blue */
+  }
+  
+  .m2 {
+    background-color: #ffc107; /* Yellow */
+  }
+  
+  .m3 {
+    background-color: #dc3545; /* Red */
+  }
+  
+  .m4 {
+    background-color: #17a2b8; /* Cyan */
+  }
+  
+  .m5 {
+    background-color: #6610f2; /* Purple */
+  }
+  
+  .m6 {
+    background-color: #fd7e14; /* Orange */
+  }
+  
+  .m7 {
+    background-color: #6f42c1; /* Indigo */
+  }
+  
+  .m8 {
+    background-color: #28a745; /* Green */
+  }
+  
+  .m9 {
+    background-color: #007bff; /* Blue */
+  }
+  
+  .m10 {
+    background-color: #ffc107; /* Yellow */
+  }
+  
+  .m11 {
+    background-color: #dc3545; /* Red */
+  }
+  
+  .m12 {
+    background-color: #17a2b8; /* Cyan */
+  }

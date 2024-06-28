@@ -1,0 +1,31 @@
+/* src/components/Sidebar.css */
+.sidebar {
+    height: 100vh;
+    width: 100%; /* 사이드바가 부모 요소의 전체 너비를 차지하도록 설정 */
+    background-color: #333;
+    color: black;
+    box-sizing: border-box; /* 패딩과 테두리를 포함하여 요소의 크기를 계산 */
+    margin-left: 40px;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    color: black; /* 사이드바 배경과 대비되는 색상으로 변경 */
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar li {
+    margin: 2px 0px;
+    padding: 30px 1px;
+    text-align: center;
+    background-color: lightblue;
+    word-wrap: break-word; /* 텍스트가 길 경우 줄바꿈을 허용 */
+    box-sizing: border-box;
+    user-select: none; 
+  }
+  

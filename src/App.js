@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+// src/App.js
+import React, { useState } from 'react';
+import Sidebar from './components/Sidebar';
+import GridPage from './components/GridPage';
 import './App.css';
 
 function App() {
+  const [shape, setShape] = useState([]);
+  console.log("app",shape);
+  const handleShapeSelect = (selectedShape) => {
+    setShape(prevShape => [...prevShape, selectedShape]);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Sidebar onShapeSelect={handleShapeSelect} />
+      <GridPage shape={shape} onShapeSelect={setShape} />
     </div>
   );
 }

@@ -58,7 +58,18 @@ const ModalContent = ({ shapeType, position, onClose, onDelete, onConnect }) => 
 
 const GridPage = ({ shape, onShapeSelect }) => {
   const [shapesState, setShapesState] = useState([]);
-  const [modelList, setModelList] = useState(['Linear Regression', 'Polynomial Regression', 'Ridge Regression', 'Lasso Regression']);
+  const [modelList, setModelList] = useState([
+    "Linear Regression",
+    "Logistic Regression",
+    "Decision Tree",
+    "Random Forest",
+    "Support Vector Machine",
+    "K-Nearest Neighbors",
+    "Naive Bayes",
+    "K-Means",
+    "Hierarchical Clustering",
+    "DBSCAN"
+  ]);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedShapeType, setSelectedShapeType] = useState('');
   const [modalPosition, setModalPosition] = useState({ x: 0, y: 0 });

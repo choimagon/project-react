@@ -2,6 +2,17 @@ import React, { useState } from 'react';
 import './parameterCom.css';
 
 function parameterComponent({onClosed, stype}) {
+    // const [modelList, setModelList] = useState([
+    //     "Linear Regression",
+    //     "Logistic Regression",
+    //     "Decision Tree",
+    //     "Random Forest",
+    //     "Support Vector Machine",
+    //     "K-Nearest Neighbors",
+    //     "Naive Bayes",
+    //     "K-Means",
+    //     "Hierarchical Clustering",
+    //     "DBSCAN"]);  
     const modalStyle = {
         position: 'absolute',
         top: '100%',

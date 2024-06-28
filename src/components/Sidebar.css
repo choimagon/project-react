@@ -17,6 +17,9 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns layout */
+    gap: 10px; /* gap between the items */
   }
   
   .sidebar li {
@@ -27,5 +30,13 @@
     word-wrap: break-word; /* 텍스트가 길 경우 줄바꿈을 허용 */
     box-sizing: border-box;
     user-select: none; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .sidebar li:hover{
+    background-color: lightsteelblue;
+  }
+  .sidebar .data{
+    background-color: lightgoldenrodyellow;
   }
   

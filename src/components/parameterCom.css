@@ -1,0 +1,8 @@
+.button-container-para{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch; /* 버튼을 부모 너비에 맞추기 */
+
+}
+

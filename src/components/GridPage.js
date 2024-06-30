@@ -216,7 +216,8 @@ const GridPage = ({ shape, onShapeSelect }) => {
       }
 
       // Output connected shape indices to console
-      console.log("Connected shapes in order:", connectedShapeIndices.map(index => `${shape[index]} `).join(''));
+      // console.log("Connected shapes in order:", connectedShapeIndices.map(index => `${shape[index]} `).join(''));
+      alert(connectedShapeIndices.map(index => `${shape[index]} `).join(''));
     } else {
       console.log("No connected shapes found.");
     }
@@ -260,7 +261,7 @@ const GridPage = ({ shape, onShapeSelect }) => {
         />
       )}
       {/* Button to print connected shapes */}
-      <button onClick={printConnectedShapes} style={{ position: 'fixed', top: '10px', left: '10px', zIndex: '1000' }}>
+      <button onClick={printConnectedShapes} style={{ position: 'fixed', top: '10px', left: '45%', zIndex: '1000' }}>
         Print Connected Shapes
       </button>
     </div>

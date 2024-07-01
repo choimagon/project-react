@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './parameterCom.css';
+import ParaSetting from './paraSetting';
 
 function ParameterComponent({ onClosed, stype }) {
+    const [paraSetOpen, setParaSetOpen] = useState(false);
+    const [parameter, setParameter] = useState('');
+    const [paraType, setParaType] = useState('');
     const modelList = [
         "Linear Regression",
         "Logistic Regression",
@@ -18,8 +22,8 @@ function ParameterComponent({ onClosed, stype }) {
     const modelParaList = [
         ["fit", "copy_x"],
         ["c", "solver", "maxiter", "penalty"],
-        ["criterion", "maxdepth", "minsamplesplit", "minsampleleaf", "maxfetures"],
-        ["estimators", "criterion", "maxdepth", "minsamplessplit", "minsampleleaf", "maxfeture", "bootstrap"],
+        ["criterion", "maxdepth", "minsamplessplit", "minsampleleaf", "maxfetures"],
+        ["estimators", "criterion", "maxdepth", "minsamplessplit", "minsampleleaf", "maxfetures", "bootstrap"],
         ["c", "kernal", "degree", "gamma", "coef0"],
         ["neighbor", "weights", "algorithm", "leaf", "p"],
         ["smooth"],
@@ -27,6 +31,10 @@ function ParameterComponent({ onClosed, stype }) {
         ["clusters", "linkage"],
         ["eps", "minsamples", "metric"]
     ];
+    const boolParameters = ["fit", "copy_x","bootstrap"];
+    const floatParameters = ["c","minsamplessplit","minsampleleaf","maxfetures","coef0","smooth","eps"];
+    const intParameters = ["maxiter","maxdepth","estimators","degree","neighbor", "leaf", "p","clusters","ninits","minsamples"];
+
 
     const modalStyle = {
         position: 'absolute',
@@ -34,7 +42,7 @@ function ParameterComponent({ onClosed, stype }) {
         left: '70%',
         margin: '4px',
         width: '200px',
-        height: '300px',
+        height: '320px',
         zIndex: 100, // Ensure modal is above other elements
         transform: 'translate(-50%, -50%)',
         padding: '20px',
@@ -42,11 +50,45 @@ function ParameterComponent({ onClosed, stype }) {
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
         borderRadius: '8px',
     };
-
+    //파리미터별 설정하는거임
     const handleParameterClick = (parameter) => {
-        // Handle the click for the parameter (example: console.log(parameter))
-        console.log(parameter);
+        // console.log(parameter);
+        if (boolParameters.includes(parameter)) {
+            setParaType('bool');
+        }
+        if (floatParameters.includes(parameter)) {
+            setParaType('float');
+        }
+        if (intParameters.includes(parameter)) {
+            setParaType('int');
+        }
+        if (parameter == 'solver'){
+            setParaType('solver');
+        }
+        if (parameter == 'penalty'){
+            setParaType('penalty');
+        }
+        if (parameter == 'criterion'){
+            setParaType('criterion');
+        }
+        if (parameter == 'kernal'){
+            setParaType('kernal');
+        }
+        if (parameter == 'weights'){
+            setParaType('weights');
+        }
+        if (parameter == 'algorithm'){
+            setParaType('algorithm');
+        }
+        if (parameter == 'linkage'){
+            setParaType('linkage');
+        }
+        setParaSetOpen(true);
+        setParameter(parameter);
     };
+    const handleClosedModal = () => {
+        setParaSetOpen(false);
+      };
 
     const handleButtonClick = () => {
         // Find the index of stype in modelList
@@ -57,7 +99,7 @@ function ParameterComponent({ onClosed, stype }) {
                 <div>
                     {parameters.map((param, idx) => (
                         <div key={idx}>
-                            <button className="btn" onClick={() => handleParameterClick(param)}>
+                            <button className="btn" onClick={()=>{handleParameterClick(param)}}>
                                 {param}
                             </button>
                             <br />
@@ -78,6 +120,7 @@ function ParameterComponent({ onClosed, stype }) {
             <br /><br />
             <div className="button-container-para">
                 {handleButtonClick()}
+                {paraSetOpen && <ParaSetting onClosed={handleClosedModal} para={parameter} ty ={paraType}/>}
             </div>
         </div>
     );

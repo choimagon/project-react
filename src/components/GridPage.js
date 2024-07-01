@@ -240,6 +240,7 @@ const GridPage = ({ shape, onShapeSelect }) => {
           );
         })}
       </svg>
+      {/* 도형에 대한 거 */}
       {shapesState.map((shape, index) => (
         <div
           key={index}

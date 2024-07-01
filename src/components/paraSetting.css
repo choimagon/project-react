@@ -1,0 +1,28 @@
+.number-input {
+    width: 60px;
+    padding: 4px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.number-input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.btn.active {
+    background-color: #28a745; /* Green background for active button */
+    color: white;
+}
+.conlist {
+    width: 70%;
+    padding: 4px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+}
